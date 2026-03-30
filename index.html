@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iuris AI - Tutor Estatuto Tributario</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-bg"></div>
+    
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">⚖️</span>
+            <div>
+                <h1>Iuris <span class="accent">AI</span></h1>
+                <p>Tutor Estatuto Tributario</p>
+            </div>
+        </div>
+        <nav>
+            <ul id="main-nav">
+                <li><a href="#" id="nav-estatuto" class="nav-link active">Estatuto</a></li>
+                <li><a href="#" id="nav-casos" class="nav-link">Casos de Uso</a></li>
+                <li><a href="#" id="nav-recursos" class="nav-link">Recursos</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <div class="avatar">👨‍💻</div>
+            <div class="user-info">
+                <span class="name">Usuario</span>
+                <span class="plan">Plan Gratuito</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="section-estatuto" class="dashboard section-view">
+        <!-- Panel Izquierdo: Entrada de Texto -->
+        <section class="input-panel glass-panel">
+            <div class="panel-header">
+                <h2>Estatuto Tributario de Colombia</h2>
+                <button class="settings-btn">⚙️</button>
+            </div>
+            
+            <div class="input-container">
+                <label for="article-input">Pega o Escribe el Artículo</label>
+                <textarea id="article-input" placeholder="Ej: Artículo 26. Determinación de la renta líquida..."></textarea>
+                
+                <div class="input-footer">
+                    <span id="word-count">0 palabras</span>
+                    <button id="analyze-btn" class="primary-btn">ANALIZAR ARTÍCULO ✨</button>
+                </div>
+            </div>
+
+            <div class="history-container">
+                <div class="history-header">
+                    <h3>Historial Reciente</h3>
+                    <span class="chevron">▼</span>
+                </div>
+                <ul class="history-list" id="history-list">
+                    <!-- History items will be inserted here -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- Panel Derecho: Resultados -->
+        <section class="results-panel glass-panel">
+            <div class="panel-header">
+                <h2>Análisis Generado por IA</h2>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="loading-state" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Analizando fundamentos jurídicos y estructura fiscal...</p>
+            </div>
+
+            <!-- Empty State -->
+            <div id="empty-state" class="empty-state">
+                <div class="empty-icon">📄</div>
+                <p>Ingresa un artículo del Estatuto Tributario en el panel izquierdo para recibir un análisis detallado, explicación y posible sustento.</p>
+            </div>
+
+            <!-- Analysis Content -->
+            <div id="analysis-content" class="analysis-content hidden">
+                <h3 id="result-title" class="result-title">ANÁLISIS</h3>
+                
+                <!-- Section 1: Analysis -->
+                <div class="result-card">
+                    <div class="card-header">
+                        <h4>1. ANÁLISIS JURÍDICO</h4>
+                        <span class="icon">⚖️</span>
+                    </div>
+                    <div class="card-body">
+                        <p id="output-analysis">Cargando...</p>
+                    </div>
+                </div>
+
+                <!-- Section 2: Explanation -->
+                <div class="result-card explanation-card">
+                    <div class="card-header">
+                        <h4>2. EXPLICACIÓN PRÁCTICA</h4>
+                        <span class="icon">📄</span>
+                    </div>
+                    <div class="card-body">
+                        <ul id="output-explanation" class="points-list">
+                            <!-- Bullet points go here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section 3: Legal Backing -->
+                <div class="result-card backing-card">
+                    <div class="card-header">
+                        <h4>3. SUSTENTO Y REFERENCIAS</h4>
+                        <span class="icon">📋</span>
+                    </div>
+                    <div class="card-body">
+                        <p id="output-backing">Cargando...</p>
+                        <div class="chart-mockup">
+                            <div class="bar" style="height: 40%"></div>
+                            <div class="bar" style="height: 60%"></div>
+                            <div class="bar" style="height: 80%"></div>
+                            <div class="bar" style="height: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <!-- Casos de Uso View -->
+    <main id="section-casos" class="dashboard section-view hidden">
+        <section class="glass-panel" style="grid-column: 1 / -1;">
+            <div class="panel-header">
+                <h2>Casos de Uso Comunes</h2>
+            </div>
+            <div class="card-body" style="font-size: 1.05rem;">
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">Descubre cómo los profesionales optimizan sus procesos tributarios utilizando nuestra Inteligencia Artificial:</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                    <div class="result-card" style="padding: 1.5rem; background: rgba(37, 99, 235, 0.05); border: 1px solid var(--blue-dark);">
+                        <h3 style="color: var(--gold); margin-bottom: 1rem;">⚖️ Respuesta a Requerimientos DIAN</h3>
+                        <p>Analiza rápidamente oficios persuasivos y encuentra la jurisprudencia exacta y conceptos de la DIAN para fundamentar y redactar respuestas sólidas reduciendo el tiempo de investigación.</p>
+                    </div>
+                    <div class="result-card" style="padding: 1.5rem; background: rgba(212, 175, 55, 0.05); border: 1px solid var(--gold-light);">
+                        <h3 style="color: var(--gold); margin-bottom: 1rem;">💼 Planeación Tributaria Estratégica</h3>
+                        <p>Simula diferentes escenarios de estructuración empresarial antes de ejecutar transacciones, identificando riesgos fiscales, posibles ahorros y beneficios tributarios aplicables.</p>
+                    </div>
+                    <div class="result-card" style="padding: 1.5rem; background: rgba(37, 99, 235, 0.05); border: 1px solid var(--panel-border);">
+                        <h3 style="color: var(--gold); margin-bottom: 1rem;">📋 Auditoría de Retenciones</h3>
+                        <p>Verifica al instante las bases, tarifas y conceptos de retención en la fuente (RTE FTE, ICA, IVA) aplicables a diferentes tipos de servicios y contratos para evitar sanciones y pagos en exceso.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recursos View -->
+    <main id="section-recursos" class="dashboard section-view hidden">
+        <section class="glass-panel" style="grid-column: 1 / -1;">
+            <div class="panel-header">
+                <h2>Recursos Oficiales e Interés</h2>
+            </div>
+            <div class="card-body">
+                <p style="margin-bottom: 2rem; color: var(--text-muted);">Enlaces rápidos a herramientas imprescindibles para contadores, abogados y contribuyentes en Colombia.</p>
+                
+                <ul class="points-list" style="font-size: 1.05rem;">
+                    <li style="margin-bottom: 1.5rem;"><a href="https://www.dian.gov.co/" target="_blank" style="color: var(--blue-accent); text-decoration: none; font-weight: 600;">Dirección de Impuestos y Aduanas Nacionales (DIAN)</a><br/>Portal Oficial Institucional y acceso al sistema Muisca.</li>
+                    <li style="margin-bottom: 1.5rem;"><a href="http://www.secretariasenado.gov.co/senado/basedoc/estatuto_tributario.html" target="_blank" style="color: var(--blue-accent); text-decoration: none; font-weight: 600;">Estatuto Tributario Nacional Compilado</a><br/>Texto íntegro y vigente proveído por la Secretaría del Senado.</li>
+                    <li style="margin-bottom: 1.5rem;"><a href="https://www.dian.gov.co/impuestos/sociedades/Renta/Paginas/Calendario_Tributario.aspx" target="_blank" style="color: var(--blue-accent); text-decoration: none; font-weight: 600;">Calendario Tributario 2024</a><br/>Fechas clave de vencimiento e hitos tributarios para el año fiscal.</li>
+                    <li style="margin-bottom: 1.5rem;"><a href="https://normograma.dian.gov.co/dian/compilacion/" target="_blank" style="color: var(--blue-accent); text-decoration: none; font-weight: 600;">Normograma Oficial DIAN</a><br/>Buscador avanzado de resoluciones, sentencias, conceptos, oficios y doctrinas dictadas por la entidad.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
