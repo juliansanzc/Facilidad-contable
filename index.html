@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIIF AI Analyzer - Análisis Inteligente de Normas Contables</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="icon">🔍</span>
+                <h1>NIIF <span class="accent">Analyzer</span></h1>
+            </div>
+            <p class="subtitle">Sube tu norma o ingresa el articulado para recibir un análisis profundo impulsado por IA</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section id="input-section" class="glass-panel">
+                <div class="tabs">
+                    <button class="tab active" data-tab="upload">Subir Archivo</button>
+                    <button class="tab" data-tab="text">Pegar Texto</button>
+                </div>
+
+                <!-- Tab: File Upload -->
+                <div class="tab-content active" id="tab-upload">
+                    <div class="drop-zone" id="drop-zone">
+                        <div class="drop-zone__content">
+                            <span class="drop-zone__icon">📄</span>
+                            <span class="drop-zone__prompt">Arrastra tu PDF o archivo de texto aquí</span>
+                            <span class="drop-zone__subprompt">o haz clic para explorar</span>
+                        </div>
+                        <input type="file" name="file-upload" id="file-upload" class="drop-zone__input" accept=".pdf,.doc,.docx,.txt" />
+                    </div>
+                </div>
+
+                <!-- Tab: Text Input -->
+                <div class="tab-content" id="tab-text">
+                    <textarea class="text-input" id="text-input" placeholder="Pega aquí el extracto de la norma NIC o NIIF..."></textarea>
+                </div>
+
+                <div class="actions mt-4">
+                    <button id="analyze-btn" class="primary-btn" disabled>
+                        <span>Analizar Norma</span>
+                        <div class="btn-loader hidden"></div>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <section id="loading-section" class="glass-panel hidden">
+                <div class="processing-container">
+                    <div class="radar-spinner"></div>
+                    <h2 class="processing-title">Procesando y Analizando...</h2>
+                    <ul class="processing-steps">
+                        <li class="step active">Extrayendo información clave...</li>
+                        <li class="step">Construyendo casos de uso pragmáticos...</li>
+                        <li class="step">Generando ejemplos contables...</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="hidden">
+                <div class="results-header">
+                    <h2>Análisis de <span id="res-title-norm" class="accent">NIIF / NIC</span></h2>
+                    <button id="reset-btn" class="secondary-btn">Analizar otra</button>
+                </div>
+
+                <div class="results-grid">
+                    <!-- Resumen -->
+                    <div class="glass-card result-card">
+                        <div class="card-header">
+                            <span class="card-icon">💡</span>
+                            <h3>Explicación y Resumen</h3>
+                        </div>
+                        <div class="card-body" id="res-summary">
+                            <!-- Injected content -->
+                        </div>
+                    </div>
+
+                    <!-- Casos de uso -->
+                    <div class="glass-card result-card">
+                        <div class="card-header">
+                            <span class="card-icon">🎯</span>
+                            <h3>Casos de Uso Aplicados</h3>
+                        </div>
+                        <div class="card-body" id="res-usecases">
+                            <!-- Injected content -->
+                        </div>
+                    </div>
+
+                    <!-- Ejemplos Prácticos -->
+                    <div class="glass-card result-card full-width">
+                        <div class="card-header">
+                            <span class="card-icon">📊</span>
+                            <h3>Ejemplos de Asientos y Escenarios</h3>
+                        </div>
+                        <div class="card-body" id="res-examples">
+                           <!-- Injected content -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Diseñado para simplificar el entendimiento de las Normas Internacionales.</p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
